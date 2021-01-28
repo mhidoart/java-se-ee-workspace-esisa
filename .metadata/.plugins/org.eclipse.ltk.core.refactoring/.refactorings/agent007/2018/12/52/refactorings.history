@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;CompanyFormDialog.java&apos; to &apos;agent007/src/com.esisa.java.io.presentation&apos;&#x0D;&#x0A;- Original project: &apos;agent007&apos;&#x0D;&#x0A;- Destination element: &apos;agent007/src/com.esisa.java.io.presentation&apos;&#x0D;&#x0A;- Original element: &apos;com.esisa.java.io.presentation.CompanyFormDialog.java&apos;" description="Copy compilation unit" destination="/src&lt;com.esisa.java.io.presentation" element1="/src&lt;com.esisa.java.io.presentation{CompanyFormDialog.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1546017009356" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,181 @@
+package com.esisa.java.swing;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import com.esisa.java.swing.listners.Exitaction;
+import com.esisa.swing.conpenoment.ChoicePanel;
+import com.esisa.swing.conpenoment.Form;
+import com.esisa.swing.conpenoment.ImagePanel;
+
+public class Exp02 extends JFrame{
+
+	public Exp02() {
+		/*exp02();
+		 */
+		init();
+		//exp03();
+		//exp04();
+		//exp05();
+		//exp06();
+		//exp07();
+		exp08();
+		setVisible(true);
+	}
+	public void exp01()
+	{
+		setSize(700, 400);
+		setLocation(100, 100);/**setbounds()*/
+		JPanel p1 = new JPanel();/*ici automatiquement un flow layout est  creer , il donne la preffered 
+		taille a nos elem  */
+		/*p1.setLayout(new GridLayout(2,2));on peut chager de layout*/
+		JLabel l1 = new JLabel("Nom : ");
+		JTextField t1 = new JTextField(20);
+		JButton b1 = new JButton("Valider");
+		p1.add(l1);// l ordre du add est tres important
+		p1.add(t1);
+		p1.add(b1);
+		setContentPane(p1);
+		/*les taille et les pos sont genere automatiquement par le layout manager*/
+
+
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setVisible(true);
+	}
+
+	public void exp02()
+	{
+		setSize(700, 400);
+		setLocation(100, 100);/**setbounds()*/
+		JPanel p1 = new JPanel();/*ici automatiquement un flow layout est  creer , il donne la preffered 
+		taille a nos elem  */
+		p1.setLayout(new BorderLayout());/*divise la surface en 5 partie*/
+		JLabel l1 = new JLabel("Nom : ");
+		JTextField t1 = new JTextField(20);
+		JButton b1 = new JButton("Valider");
+		p1.add("West",l1);// l ordre du add est tres important
+		p1.add("North",t1);
+		p1.add("South",b1);
+		setContentPane(p1);
+		/*les taille et les pos sont genere automatiquement par le layout manager*/
+
+
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setVisible(true);
+	}
+
+	public void init()
+	{
+		setSize(700, 400);
+		setLocation(100, 100);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+	}
+
+	public void exp03()
+	{
+
+
+		JPanel container = new JPanel();
+		container.setLayout(new BorderLayout());
+
+		JButton b1 = new JButton("Valider");
+		JButton b2 = new JButton("Annuler");
+		JPanel p1 = new JPanel();
+		p1.add(b1);
+		p1.add(b2);
+		container.add("South",p1);
+
+		setContentPane(container);
+		setVisible(true);
+
+	}
+
+	public void exp04()
+	{
+
+
+		JPanel container = new JPanel();
+		container.setLayout(new BorderLayout());
+
+		ButtonPanel p1 = new ButtonPanel("Valider","Enregistrer","Annuler");
+
+		container.add("South",p1);
+
+		JPanel form = new JPanel();
+		form.setLayout(new BoxLayout(form, BoxLayout.Y_AXIS));//ajuster verticalement
+
+		container.add("Center",form);
+
+		form.add(new LabeledTextField("Nom", 20));
+		form.add(new LabeledTextField("Prenom", 20));
+		form.add(new LabeledTextField("Tel", 12));
+		setContentPane(container);
+		setVisible(true);
+
+	}
+	public void exp05()
+	{
+
+
+		JPanel container = new JPanel();
+
+		container.setLayout(new BorderLayout());
+
+		ButtonPanel p1 = new ButtonPanel("Valider","Annuler");
+
+		container.add("South",p1);
+
+		Form form = new Form("Saisie d'un document");
+
+		container.add("Center",form);
+
+		form.add("Title",40);
+		form.add("Prenom",30);
+		form.add("Id",30);
+		form.add("Année",30);
+form.addUniqueChoiceField("langue","francais","anglais","Arabe");
+form.addUniqueChoiceField("Etat","Disponible","Non disponible");
+form.addMultipleChoiceField("Format","Papier","Electronique");
+
+
+		setContentPane(container);
+		pack();
+		//setResizable(false);
+
+
+	}
+	void exp06()
+	{
+		ChoicePanel p1=new ChoicePanel("langue","francais","anglais","Arabe");
+		ChoicePanel p2=new ChoicePanel(ChoicePanel.MULTIPLE,"langue","francais","anglais","Arabe");
+
+		getContentPane().add("North", p1);
+		getContentPane().add("South", p2);
+	}
+	void exp07()
+	{
+		ImagePanel p1 =new ImagePanel("resources/mydesktop_pour_pcfix.png");
+		getContentPane().add("Center", p1);
+	}
+	
+	void exp08() {//listner  // listners
+		JButton b1=new JButton("Quitter");
+		b1.addActionListener(new Exitaction());
+		getContentPane().add("South", b1);
+		
+		
+	}
+	public static void main(String[] args) {
+
+		new Exp02();
+	}
+
+}

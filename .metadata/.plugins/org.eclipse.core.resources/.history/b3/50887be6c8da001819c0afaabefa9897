@@ -1,0 +1,9 @@
+package com.somatra.reactifpanel;
+
+public class Panel {
+
+	public Panel() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

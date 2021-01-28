@@ -1,0 +1,20 @@
+package com.somatra.reactifpanel;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+public class Panel extends JPanel {
+
+	public Panel() {
+		// TODO Auto-generated constructor stub
+		setLayout(new FlowLayout());
+		JButton b1=new JButton("click");
+		add(b1);
+		
+	}
+	
+	
+
+}

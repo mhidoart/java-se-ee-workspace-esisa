@@ -1,0 +1,9 @@
+package com.somatra.reactifpanel;
+
+public class Frame {
+
+	public Frame() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
